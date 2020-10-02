@@ -41,7 +41,7 @@ chmod +x /usr/bin/azurefile-dockervolumedriver
 
 wget -qO /etc/systemd/system/azurefile-dockervolumedriver.service https://raw.githubusercontent.com/Azure/azurefile-dockervolumedriver/master/contrib/init/systemd/azurefile-dockervolumedriver.service
 
-wget -qO /etc/default/azurefile-dockervolumedriver https://raw.githubusercontent.com/azeem2020/Azure/main/azurefile-dockervolumedriver/azurefile-dockervolumedriver.default
+wget -qO /etc/default/azurefile-dockervolumedriver https://raw.githubusercontent.com/Azure/azurefile-dockervolumedriver/master/contrib/init/systemd/azurefile-dockervolumedriver.default
 ```
 
 #### Reload and Start daemon
