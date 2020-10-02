@@ -5,7 +5,7 @@ This is a Docker Volume Driver which uses <b>Azure Storage File Storage</b> to m
 This is originally taken from the Azure ['azurefile-dockervolumedriver'](https://github.com/Azure/azurefile-dockervolumedriver) repository.
 
 #### <i>DEPRECATION NOTICE FROM MICROSOFT</i>
-Please note this driver is no longer supported and will not be maintained moving forwards. We recommend users use CloudStor for Docker native solutions.
+<i>Please note this driver is no longer supported and will not be maintained moving forwards. We recommend users use CloudStor for Docker native solutions.</i>
 
 ## Why this driver?
 * Share volume among multiple containers
