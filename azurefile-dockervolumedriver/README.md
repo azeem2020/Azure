@@ -11,11 +11,11 @@ Please note this driver is no longer supported and will not be maintained moving
 * Share volume among multiple conatiners
 * Control (edit, modify, delete) files direclty from file explorer
 
-##Prerequits
+## Prerequits
 * Storage Account on Azure...
 * The server process must be running on the host machine where Docker engine is installed on at all times for volumes to work properly.
 
-##Installation
+## Installation
 
 Before we start, it would be useful to know that what Docker plugins are.  Docker plugins extends the Docker capabilities to use external services available for storage and networking. There are several volumes and networking plugins are out there. In this article, we will see how to use azure file storage Docker volume plugin to deal with persisting storage with Docker.
 
@@ -30,9 +30,9 @@ This plugin enables you to use the same storage accounts across different Docker
 
 Detailed Ubuntu (systemd) [installation instructions](https://github.com/Azure/azurefile-dockervolumedriver/blob/master/contrib/init/systemd/README.md)
 
-`config=$1`
+`config=$1
 
-`wget -qO /usr/bin/azurefile-dockervolumedriver https://github.com/Azure/azurefile-dockervolumedriver/releases/download/0.2.1/azurefile-dockervolumedriver`
+wget -qO /usr/bin/azurefile-dockervolumedriver https://github.com/Azure/azurefile-dockervolumedriver/releases/download/0.2.1/azurefile-dockervolumedriver`
 
 `chmod +x /usr/bin/azurefile-dockervolumedriver`
 
