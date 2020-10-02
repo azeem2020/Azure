@@ -24,7 +24,9 @@ This plugin enables you to use the same storage accounts across different Docker
 ### Start volume driver daemon
 * “cifs-utils” package must be installed on the host system as Azure Files use SMB protocol. For Debian/Ubuntu, run the following command on your host:
 
-` sudo apt-get install -y cifs-utils `
+``` 
+sudo apt-get install -y cifs-utils
+```
 
 ### Config AzureFileStorageVolumePlugin
 
