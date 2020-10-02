@@ -1,17 +1,17 @@
 # Docker Volume Driver for Azure File Storage (File Share)
 This is a Docker Volume Driver which uses <b>Azure Storage File Storage</b> to mount file shares on the cloud to Docker containers as volumes. It uses network file sharing [(SMB/CIFS protocols)](https://docs.microsoft.com/en-gb/windows/win32/fileio/microsoft-smb-protocol-and-cifs-protocol-overview?redirectedfrom=MSDN) capabilities of Azure File Storage.
 
-##Origional Content
-This is originaly taken from the Azure ['azurefile-dockervolumedriver'](https://github.com/Azure/azurefile-dockervolumedriver) repository.
+## Original Content
+This is originally taken from the Azure ['azurefile-dockervolumedriver'](https://github.com/Azure/azurefile-dockervolumedriver) repository.
 
 ### DEPRECATION NOTICE FROM MICROSOFT
-Please note this driver is no longer supported and will not be maintained moving forwards. We recommend users use CloudStor for Docker native solutions..
+Please note this driver is no longer supported and will not be maintained moving forwards. We recommend users use CloudStor for Docker native solutions.
 
 ## Why this driver?
-* Share volume among multiple conatiners
-* Control (edit, modify, delete) files direclty from file explorer
+* Share volume among multiple containers
+* Control (edit, modify, delete) files directly from file explorer
 
-## Prerequits
+## Prerequisites
 * Storage Account on Azure...
 * The server process must be running on the host machine where Docker engine is installed on at all times for volumes to work properly.
 
@@ -30,28 +30,37 @@ This plugin enables you to use the same storage accounts across different Docker
 
 Detailed Ubuntu (systemd) [installation instructions](https://github.com/Azure/azurefile-dockervolumedriver/blob/master/contrib/init/systemd/README.md)
 
-`config=$1
+```
+config=$1
 
-wget -qO /usr/bin/azurefile-dockervolumedriver https://github.com/Azure/azurefile-dockervolumedriver/releases/download/0.2.1/azurefile-dockervolumedriver`
+wget -qO /usr/bin/azurefile-dockervolumedriver https://github.com/Azure/azurefile-dockervolumedriver/releases/download/0.2.1/azurefile-dockervolumedriver
 
-`chmod +x /usr/bin/azurefile-dockervolumedriver`
+chmod +x /usr/bin/azurefile-dockervolumedriver
 
-`wget -qO /etc/systemd/system/azurefile-dockervolumedriver.service https://raw.githubusercontent.com/Azure/azurefile-dockervolumedriver/master/contrib/init/systemd/azurefile-dockervolumedriver.service`
+wget -qO /etc/systemd/system/azurefile-dockervolumedriver.service https://raw.githubusercontent.com/Azure/azurefile-dockervolumedriver/master/contrib/init/systemd/azurefile-dockervolumedriver.service
 
-`cp $config /etc/default/`
+cp $config /etc/default/
 
-`systemctl daemon-reload`
+systemctl daemon-reload
 
-`systemctl enable azurefile-dockervolumedriver`
+systemctl enable azurefile-dockervolumedriver
 
-`systemctl start azurefile-dockervolumedriver`
+systemctl start azurefile-dockervolumedriver
 
-`systemctl status azurefile-dockervolumedriver`
+systemctl status azurefile-dockervolumedriver
+```
 
 ### Create volumes and containers
 
 create volumes and containers as follows:
 
-` docker volume create --name my_volume -d azurefile -o share=myshare`
-` docker run -i -t -v my_volume:/data busybox`
+``` 
+docker volume create --name my_volume -d azurefile -o share=myshare
 
+docker run -i -t -v my_volume:/data busybox
+```
+
+## License
+``` 
+Copyright 2016 Microsoft Corporation
+```
