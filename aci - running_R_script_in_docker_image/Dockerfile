@@ -1,10 +1,8 @@
 # Base image https://hub.docker.com/_/r-base
 FROM r-base:latest
 
-
 ## 01/06 create directories
 RUN mkdir -p /maran
-
 
 ## 02/06 copy files and directories
 COPY /maran/. /maran
