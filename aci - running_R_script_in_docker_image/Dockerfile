@@ -9,7 +9,7 @@ RUN mkdir -p /maran
 ## 02/06 copy files and directories
 COPY /maran/. /maran
 
-## 03/06 Install java jdk/jre latest
+## 03/06 Install java jdk/jre latest (Required for R package)
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils && \
     apt-get install -y default-jre && \
     apt-get install -y default-jdk && \
